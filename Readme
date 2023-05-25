@@ -1,0 +1,145 @@
+The language used C++
+
+Compilation method:
+	```
+	make
+	```
+Problem - 1
+
+Usage/Execution/Running of the code:
+	```
+	./floyd
+	```
+
+Problem - 2
+
+Usage/Execution/Running of the code:
+	```
+	./lcs <String 1> <String 2>
+	```
+
+
+
+To clean the object files
+    ```
+    make clean
+
+I have tested in my remote these are the output for floyd and lcs 
+ 
+rtamman1@remote04:~/tammana_harsha_proj3$ make
+
+g++ -c tammana_harsha_pa3_lcs.cpp
+g++ tammana_harsha_pa3_lcs.o -o lcs
+g++ -c tammana_harsha_pa3_floyd.cpp
+g++ tammana_harsha_pa3_floyd.o -o floyd
+
+rtamman1@remote04:~/tammana_harsha_proj3$ ./floyd
+Selected n value : 8
+
+Amatrix: 
+0 2 5 1 4 3 5 1 
+2 0 3 1 2 1 3 3 
+5 3 0 4 4 2 1 4 
+1 1 4 0 3 2 4 2 
+4 2 4 3 0 3 5 3 
+3 1 2 2 3 0 3 4 
+5 3 1 4 5 3 0 5 
+1 3 4 2 3 4 5 0 
+
+Pmatrix: 
+0 4 4 4 4 4 4 8 
+4 0 6 4 5 6 7 4 
+4 6 0 4 5 6 7 8 
+1 2 3 0 2 2 7 1 
+2 2 3 2 0 2 7 8 
+2 2 3 2 2 0 3 2 
+4 2 3 4 5 3 0 3 
+1 1 3 1 5 1 3 0 
+
+V1-Vj : Shortest path and length
+V1 V1 : 0
+V1 V1 V4 V2: 2
+V1 V1 V4 V3: 5
+V1 V1 V4: 1
+V1 V1 V4 V2 V5: 4
+V1 V1 V4 V2 V6: 3
+V1 V1 V4 V7: 5
+V1 V1 V8: 1
+
+V2-Vj : Shortest path and length
+V2 V2 V4 V1: 2
+V2 V2 : 0
+V2 V2 V6 V3: 3
+V2 V2 V4: 1
+V2 V2 V5: 2
+V2 V2 V6: 1
+V2 V2 V7: 3
+V2 V2 V4 V1 V8: 3
+
+V3-Vj : Shortest path and length
+V3 V3 V4 V1: 5
+V3 V3 V6 V2: 3
+V3 V3 : 0
+V3 V3 V4: 4
+V3 V3 V5: 4
+V3 V3 V6: 2
+V3 V3 V7: 1
+V3 V3 V8: 4
+
+V4-Vj : Shortest path and length
+V4 V4 V1: 1
+V4 V4 V2: 1
+V4 V4 V3: 4
+V4 V4 : 0
+V4 V4 V2 V5: 3
+V4 V4 V2 V6: 2
+V4 V4 V7: 4
+V4 V4 V1 V8: 2
+
+V5-Vj : Shortest path and length
+V5 V5 V2 V4 V1: 4
+V5 V5 V2: 2
+V5 V5 V3: 4
+V5 V5 V2 V4: 3
+V5 V5 : 0
+V5 V5 V2 V6: 3
+V5 V5 V7: 5
+V5 V5 V8: 3
+
+V6-Vj : Shortest path and length
+V6 V6 V2 V4 V1: 3
+V6 V6 V2: 1
+V6 V6 V3: 2
+V6 V6 V2 V4: 2
+V6 V6 V2 V5: 3
+V6 V6 : 0
+V6 V6 V3 V7: 3
+V6 V6 V2 V4 V1 V8: 4
+
+V7-Vj : Shortest path and length
+V7 V7 V4 V1: 5
+V7 V7 V2: 3
+V7 V7 V3: 1
+V7 V7 V4: 4
+V7 V7 V5: 5
+V7 V7 V3 V6: 3
+V7 V7 : 0
+V7 V7 V3 V8: 5
+
+V8-Vj : Shortest path and length
+V8 V8 V1: 1
+V8 V8 V1 V4 V2: 3
+V8 V8 V3: 4
+V8 V8 V1 V4: 2
+V8 V8 V5: 3
+V8 V8 V1 V4 V2 V6: 4
+V8 V8 V3 V7: 5
+V8 V8 : 0
+
+FOR LCS:
+
+rtamman1@remote04:~/tammana_harsha_proj3$ ./lcs abbbcdetg cbacdebb
+Length of LCS: 4
+LCS: acde
+
+Thank You
